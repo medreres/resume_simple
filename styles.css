@@ -307,7 +307,7 @@ main {
 
   position: absolute;
   opacity: 0;
-  transform: translateY(-99%);
+  transform: translate(-3%,-100%);
 }
 
 
