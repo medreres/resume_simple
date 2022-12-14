@@ -292,7 +292,9 @@ main {
   grid-gap: 2em;
 }
 
+
 .project {
+  position: relative;
   padding: 2em;
   margin: 0 auto;
   text-align: center;
@@ -300,8 +302,22 @@ main {
   transition: transform 0.2s linear;
 }
 
-.project:hover {
-  transform: translateY(-7px);
+.front {
+  transition: opacity .5s;
+
+  position: absolute;
+  opacity: 0;
+  transform: translateY(-99%);
+}
+
+
+.project:hover .front {
+  opacity: 1;
+}
+
+.project .back img {
+  margin-top: 20px;
+  border-radius: 10px;
 }
 
 .project__description {
@@ -363,6 +379,14 @@ main {
   background-color: transparent;
   font-size: 1.8rem;
   transition: transform 0.2s ease-in-out;
+}
+
+@media (min-width:992px) {
+
+  .project:last-child {
+    justify-self: center;
+    grid-column-start: span 3;
+  }
 }
 
 @media (max-width: 600px) {
